@@ -1,0 +1,24 @@
+.header_list
+{
+    display: inline;
+}
+
+header
+{
+    display: inline-block;
+    background: #1E1E1E;
+    color: #FFFFFF;
+    font-size: 32px;
+    text-align: center;
+    margin-left:60px
+}
+nav a
+{
+    margin: 100px;
+}
+
+nav div
+{
+    text-align: right;
+    color: rebeccapurple;
+}
