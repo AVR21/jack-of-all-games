@@ -6,10 +6,10 @@ Jack of All Games es una aplicación web diseñada para que los usuarios puedan 
 ---
 
 ## Características
-✅ **Gestión de la colección de juegos**: Agregar, editar y eliminar juegos en la biblioteca personal.
-✅ **Lista de deseos**: Guardar juegos que el usuario quiere adquirir en el futuro.
-✅ **Seguimiento de logros**: Registrar y visualizar los logros desbloqueados.
-✅ **Interfaz amigable y responsive**: Diseño accesible y adaptable a diferentes dispositivos.
+- **Gestión de la colección de juegos**: Agregar, editar y eliminar juegos en la biblioteca personal.
+- **Lista de deseos**: Guardar juegos que el usuario quiere adquirir en el futuro.
+- **Seguimiento de logros**: Registrar y visualizar los logros desbloqueados.
+- **Interfaz amigable y responsive**: Diseño accesible y adaptable a diferentes dispositivos.
 
 ---
 
