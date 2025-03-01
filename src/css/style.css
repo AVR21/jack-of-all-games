@@ -1,5 +1,7 @@
 .navbar-custom {
     padding: 10px 20px;
+    position: fixed;
+    background-color: #1E1E1E;
 }
 .logo-img {
     width: 50px;
@@ -15,16 +17,21 @@
     border-radius: 50%;
     object-fit: cover;
 }
-/* Footer */
+footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
 .footer-custom {
-    background-color: #1E1E1E; /* Mismo color oscuro que el navbar */
+    background-color: #1E1E1E;
     color: white;
 }
 
-/* Iconos de redes sociales */
 .social-icon {
     width: 30px;
     height: 30px;
     object-fit: contain;
-    filter: invert(1); /* Si los iconos son oscuros, los vuelve blancos */
+    filter: invert(1);
 }
