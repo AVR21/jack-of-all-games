@@ -15,3 +15,16 @@
     border-radius: 50%;
     object-fit: cover;
 }
+/* Footer */
+.footer-custom {
+    background-color: #1E1E1E; /* Mismo color oscuro que el navbar */
+    color: white;
+}
+
+/* Iconos de redes sociales */
+.social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: invert(1); /* Si los iconos son oscuros, los vuelve blancos */
+}
