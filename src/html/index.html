@@ -11,12 +11,29 @@
                     <div>logo</div>
                 </nav>
             </header>
-        <div>hola que tal</div>
 
-
+            <section id="game-card-zone">
+                <!-- Aquí se inyectará el contenido de card1.html -->
+            </section>
 
         <footer>
             hola
         </footer>
+
+        <script>
+            // Utilizamos fetch para cargar el contenido del template
+            fetch('templates/game-card.html')
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error('Error al cargar el template');
+                }
+                return response.text();
+              })
+              .then(template => {
+                document.getElementById('game-card-zone').innerHTML = template;
+              })
+              .catch(error => console.error('Error:', error));
+          </script>
+
         </body>
 </html>
