@@ -1,3 +1,7 @@
+body
+{
+    background: #303030 !important;
+}
 .navbar-custom {
     padding: 10px 20px;
     position: fixed;
