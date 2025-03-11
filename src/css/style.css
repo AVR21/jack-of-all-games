@@ -2,6 +2,11 @@ body
 {
     background: #303030 !important;
 }
+
+h1
+{
+    color: #ffffff !important;
+}
 .navbar-custom {
     padding: 10px 20px;
     position: fixed;
