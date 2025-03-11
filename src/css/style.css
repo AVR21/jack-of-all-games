@@ -6,6 +6,8 @@ body
 h1
 {
     color: #ffffff !important;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 .navbar-custom {
     padding: 10px 20px;

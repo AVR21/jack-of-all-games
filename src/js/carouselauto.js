@@ -43,10 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.body.insertAdjacentHTML("beforeend", `
-        <button id="prevSlide" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%);">❮</button>
-        <button id="nextSlide" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);">❯</button>
-    `);
+
 
     document.getElementById("prevSlide").addEventListener("click", () => {
         clearInterval(autoSlide);

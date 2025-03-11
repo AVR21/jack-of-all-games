@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,9 +15,9 @@
 <header id="main_header" xlu-include-file="templates/header.html"></header>
 <div id="search-bar" xlu-include-file="templates/search-bar.html"></div>
 <h1>news</h1>
-<div id="carousel">
 
-    <div class="carousel-container">
+<div id="carousel-container" style="position: relative; display: flex; justify-content: center; align-items: center;">
+    <div id="carousel" class="carousel-container">
         <div class="item"><div id="game-card1" xlu-include-file="templates/game-card.html"></div></div>
         <div class="item"><div id="game-card2" xlu-include-file="templates/game-card.html"></div></div>
         <div class="item"><div id="game-card3" xlu-include-file="templates/game-card.html"></div></div>
@@ -29,6 +29,8 @@
         <input type="radio" name="position" />
         <input type="radio" name="position" />
     </div>
+    <button id="prevSlide" class="carousel-button">❮</button>
+    <button id="nextSlide" class="carousel-button">❯</button>
 </div>
 
 <footer id="main_footer" xlu-include-file="templates/footer.html"></footer>
