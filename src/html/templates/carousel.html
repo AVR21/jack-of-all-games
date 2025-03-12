@@ -1,7 +1,3 @@
-<head>
-  <link rel="stylesheet" href="src/css/carousel.css">
-</head>
-
 <script src="../../js/xlu-include-file.js"></script>
 <script src="../../js/carouselauto.js"></script>
 <div id="carousel">
@@ -11,12 +7,19 @@
   <input type="radio" name="position" />
   <input type="radio" name="position" />
   <div class="carousel-container">
-    <div class="item"><div id="game-card1" xlu-include-file="game-card.html"></div></div>
-    <div class="item"><div id="game-card2" xlu-include-file="game-card.html"></div></div>
-    <div class="item"><div id="game-card3" xlu-include-file="game-card.html"></div></div>
-    <div class="item"><div id="game-card4" xlu-include-file="game-card.html"></div></div>
-    <div class="item"><div id="game-card5" xlu-include-file="game-card.html"></div></div>
+    <div class="item"><div id="game-card6" xlu-include-file="templates/game-card.html"></div></div>
+    <div class="item"><div id="game-card7" xlu-include-file="templates/game-card.html"></div></div>
+    <div class="item"><div id="game-card8" xlu-include-file="templates/game-card.html"></div></div>
+    <div class="item"><div id="game-card9" xlu-include-file="templates/game-card.html"></div></div>
+    <div class="item"><div id="game-card10" xlu-include-file="templates/game-card.html"></div></div>
   </div>
 </div>
+<script>
+  xLuIncludeFile().then(() => {
+    let script = document.createElement("script");
+    script.src = "../../js/carouselauto.js";
+    document.body.appendChild(script);
+  });
+</script>
 
 <script>xLuIncludeFile();</script>
