@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home Page - Jack Of All Games</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Page - Jack Of All Games</title>
+    <link rel="stylesheet" href="../css/style.css?v=1">
+    <script src="../js/xlu-include-file.js"></script>
+    <style>
+        .game-page-vp {
+            display: grid;
+            min-height: 100dvh;
+            grid-template-rows: auto 1fr auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-page-vp">
+        <header style="position: sticky; top: 0;" xlu-include-file="templates/header.html"></header>
+        <main style="background-color: darkslategray; color: white;">
+        <footer style="position: fixed;" xlu-include-file="templates/footer.html"></footer>
+    </div>
 
-    <body>
-
-    </body>
+    <script>xLuIncludeFile();</script>
+</body>
 </html>
