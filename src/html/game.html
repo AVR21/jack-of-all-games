@@ -17,7 +17,30 @@
 <body>
     <div class="game-page-vp">
         <header style="position: sticky; top: 0;" xlu-include-file="templates/header.html"></header>
-        <main style="background-color: darkslategray; color: white;">
+
+        <main color: white;">
+            <div xlu-include-file="templates/search-bar.html"></div>
+
+            <article style="background-color: #202020; margin: 0 10%; padding: 2%; flex-wrap: wrap; border-radius: 15px;">
+                <section class="game-info-card" style="display: grid; grid-template-columns: 50% 50%; column-gap: 20px; align-items: center;">
+                    <iframe style="border-radius: 15px; width: 100%; height: auto; aspect-ratio: 16/9;" src="https://www.youtube.com/embed/LLKXN-2XqQQ?autoplay=1&mute=1&controls=0"></iframe>
+                    <section style="display: grid; grid-template-rows: auto 1fr 2fr 1fr; color: white">
+                        <h1>Game title</h1>
+                        <section style="display: grid; grid-template-columns: 2fr 1fr;">
+                            <h2>Platform</h2>
+                            <h2 style="background-color: gray; border-radius: 15px; text-align: center; align-content: center; width: 25%; aspect-ratio: 1;">10</h2>
+                        </section>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ut autem numquam? Autem omnis dicta est porro saepe, at adipisci enim perferendis excepturi commodi ullam unde blanditiis nihil quo mollitia.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias cumque et architecto ut autem tempora aperiam, voluptatibus non commodi. Ex, obcaecati. Doloribus, sunt id voluptatum temporibus consectetur quia enim accusamus!
+                        </p>
+                        <button style="width: 25%;height: fit-content; margin: auto;">Add to Library</button>
+                    </section>
+                </section>
+            </article>
+
+        </main>
+        
         <footer style="position: fixed;" xlu-include-file="templates/footer.html"></footer>
     </div>
 
