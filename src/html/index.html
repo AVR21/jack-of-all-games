@@ -16,14 +16,37 @@
 <header id="main_header" xlu-include-file="templates/header.html"></header>
 <div id="search-bar" xlu-include-file="templates/search-bar.html"></div>
 <h1>news</h1>
-
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="justify-self: center">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="game.html"> <div id="game-card1" xlu-include-file="templates/game-card.html"></div></a>
+        </div>
+        <div class="carousel-item">
+            <a href="game.html"> <div id="game-card2" xlu-include-file="templates/game-card.html"></div></a>
+        </div>
+        <div class="carousel-item">
+            <a href="game.html"> <div id="game-card3" xlu-include-file="templates/game-card.html"></div></a>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!--
 <div id="carousel-container" style="position: relative; display: flex; justify-content: center; align-items: center;">
     <div id="carousel" class="carousel-container">
+
         <div class="item"><div id="game-card1" xlu-include-file="templates/game-card.html"></div></div>
         <div class="item"><div id="game-card2" xlu-include-file="templates/game-card.html"></div></div>
         <div class="item"><div id="game-card3" xlu-include-file="templates/game-card.html"></div></div>
         <div class="item"><div id="game-card4" xlu-include-file="templates/game-card.html"></div></div>
         <div class="item"><div id="game-card5" xlu-include-file="templates/game-card.html"></div></div>
+
         <input type="radio" name="position" checked />
         <input type="radio" name="position" />
         <input type="radio" name="position" />
@@ -33,8 +56,29 @@
     <button id="prevSlide" class="carousel-button">❮</button>
     <button id="nextSlide" class="carousel-button">❯</button>
 </div>
+-->
 <h1>Community top</h1>
-<div id="carousel2" xlu-include-file="templates/carousel.html"></div>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="justify-self: center">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="game.html"> <img src="../media/placeholder_logo.png" class="d-block w-1''" alt="..."></a>
+        </div>
+        <div class="carousel-item">
+            <a href="game.html"> <img src="../media/placeholder_logo.png" class="d-block w-100" alt="..."></a>
+        </div>
+        <div class="carousel-item">
+            <a href="game.html"> <img src="../media/placeholder_logo.png" class="d-block w-100" alt="..."></a>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 <footer id="main_footer" xlu-include-file="templates/footer.html"></footer>
 
 <script>
