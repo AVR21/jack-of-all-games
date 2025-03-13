@@ -1,0 +1,5 @@
+<!-- Jack o all games/src/html/templates/cover-card.html -->
+<div class="cover-card" data-game-name="{{ game.name.lower() }}">
+    <img src="{{ game.cover_image }}" alt="{{ game.name }}"onerror="this.src='{{ url_for('static', filename='media/placeholder_coverCard.png') }}'">
+    <div class="title">{{ game.name }}</div>
+</div>
