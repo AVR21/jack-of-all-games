@@ -332,7 +332,10 @@ footer
     text-decoration: none;
     color: white;
 }
-
+.link-footer:hover
+{
+    transform: scale(1.5);
+}
 .icon-responsive {
     font-size: 1.5rem;
 }
@@ -344,4 +347,21 @@ footer
     .icon-responsive {
         font-size: 1.2rem;
     }
+}
+
+
+.discord:hover {
+    color: #5865f2;
+}
+
+.facebook:hover {
+    color: blue;
+}
+
+.instagram:hover {
+    color: #e11d74;
+}
+
+.twitter:hover {
+    filter: invert(100%);
 }
