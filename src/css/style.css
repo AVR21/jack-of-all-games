@@ -326,3 +326,22 @@ footer
     color: white;
     background-color: #1E1E1E;
 }
+
+.link-footer
+{
+    text-decoration: none;
+    color: white;
+}
+
+.icon-responsive {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 576px) {
+    .footer-custom {
+        position: relative;
+    }
+    .icon-responsive {
+        font-size: 1.2rem;
+    }
+}
