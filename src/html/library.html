@@ -11,34 +11,10 @@
     <link rel="stylesheet" href="../css/style.css?v=1">
     <style>
 
-        .search-bar {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .search-input {
-            flex-grow: 1;
-            padding: 8px;
-            border-radius: 5px;
-            border: none;
-            background-color: #333;
-            color: white;
-        }
-
-        .filter-btn {
-            padding: 8px 15px;
-            border-radius: 5px;
-            border: none;
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-        }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
         }
 
         .cover-card {
@@ -66,20 +42,13 @@
             font-size: 0.9em;
         }
 
-        .footer {
-            margin-top: 20px;
-            text-align: right;
-        }
+
     </style>
 </head>
 <body>
     <header xlu-include-file="templates/header.html"></header>
 
-    <div class="search-bar">
-        <input type="search" class="search-input" placeholder="Search...">
-        <button class="filter-btn">filter</button>
-    </div>
-
+    <div id="search-bar" xlu-include-file="templates/search-bar.html"></div>
     <div class="grid-container">
         <!-- Repeat this cover-card 10 times -->
         
