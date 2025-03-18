@@ -1,14 +1,13 @@
 html,body
 {
     background: #303030 !important;
-    grid-template-rows: 1fr auto;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+        
     margin: 0;
-}
-body
-{
     padding-top: 70px;
 }
-
 
 h1
 {
@@ -16,88 +15,6 @@ h1
     padding-left: 20px;
     padding-top: 20px;
 }
-
-
-.navbar-custom {
-    padding: 10px 20px;
-    position: fixed; !important;
-    background-color: #1E1E1E;
-
-}
-
-.logo-img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-}
-.nav-item {
-    margin: 0 15px;
-}
-.auth-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-footer
-{
-    height: 60px;
-
-    width: 100%;
-
-    position: relative;
-
-}
-
-.footer-custom {
-    background-color: #1E1E1E;
-    color: white;
-}
-
-.social-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    filter: invert(1);
-}
-
-/*Achievement card*/
-.achievement-card {
-    width: 350px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    overflow: hidden;
-    background-color: #eee;
-    font-family: sans-serif;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .achievement-card .achievement-image {
-    width: 50px;
-    height: 50px;
-    background-color: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    flex-shrink: 0;
-  }
-  .achievement-card .achievement-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .achievement-card .achievement-details h3 {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-  .achievement-card .achievement-details p {
-    margin: 2px 0 0 0;
-    font-size: 0.9rem;
-    color: #555;
-  }
 
   /*Cover card*/
   .card-vertical {
@@ -120,28 +37,6 @@ footer
     color: #fff;
     padding: 8px;
     text-align: center;
-  }
-
-  /*Game card*/
-  .card-horizontal {
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    overflow: hidden;
-    font-family: sans-serif;
-  }
-  .card-horizontal .card-image {
-    width: 100%;
-    height: 150px;
-    background-color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .card-horizontal .card-content {
-    background-color: #444;
-    color: #fff;
-    padding: 8px;
   }
 
   /*Genre pop-up*/
