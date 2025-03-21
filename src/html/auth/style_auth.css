@@ -1,0 +1,68 @@
+/* Estilos globales */
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Contenedor común para formularios */
+  form {
+    background-color: #2a2a2a;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Título de formulario */
+  form h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #e0e0e0;
+  }
+  
+  /* Espaciado entre campos */
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  /* Etiquetas de entrada */
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc;
+  }
+  
+  /* Campos de entrada de texto, email y contraseña */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Botón de envío */
+  form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: purple;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover en botón */
+  form button:hover {
+    background-color: #5a005a;
+  }
+  
