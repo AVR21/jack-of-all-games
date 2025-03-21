@@ -4,66 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
+    <title>Library - Jack Of All Games</title>
+
+
+    <script src="../js/xlu-include-file.js"></script>
+    <link rel="stylesheet" href="../css/style.css?v=1">
     <style>
-        body {
-            background-color: #1a1a1a;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .search-bar {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .search-input {
-            flex-grow: 1;
-            padding: 8px;
-            border-radius: 5px;
-            border: none;
-            background-color: #333;
-            color: white;
-        }
-
-        .filter-btn {
-            padding: 8px 15px;
-            border-radius: 5px;
-            border: none;
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-        }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
         }
 
         .cover-card {
@@ -91,29 +42,13 @@
             font-size: 0.9em;
         }
 
-        .footer {
-            margin-top: 20px;
-            text-align: right;
-        }
+
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="../media/placeholder_logo.png" alt="Logo" class="logo">
-        <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">Library</a>
-        </nav>
-        <div class="user-profile">
-            <div style="width: 30px; height: 30px; background-color: #666; border-radius: 50%;"></div>
-        </div>
-    </div>
+    <header xlu-include-file="templates/header.html"></header>
 
-    <div class="search-bar">
-        <input type="search" class="search-input" placeholder="Search...">
-        <button class="filter-btn">filter</button>
-    </div>
-
+    <div id="search-bar" xlu-include-file="templates/search-bar.html"></div>
     <div class="grid-container">
         <!-- Repeat this cover-card 10 times -->
 
@@ -159,8 +94,8 @@
         </div>
     </div>
 
-    <div class="footer">
-        <span>Contact us @</span>
-    </div>
+    <footer xlu-include-file="templates/footer.html"></footer>
+    
+    <script>xLuIncludeFile();</script>
 </body>
 </html>
