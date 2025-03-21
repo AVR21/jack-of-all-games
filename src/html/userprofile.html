@@ -19,7 +19,7 @@
 
         html, body {
             height: 100%;
-            background-color: #1a1a1a;
+            background-color: #202020;
             color: white;
             font-family: Arial, sans-serif;
         }
@@ -30,42 +30,14 @@
             min-height: 100vh;
         }
 
-        .header {
-            background-color: #1a1a1a;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .user-profile {
-            width: 30px;
-            height: 30px;
-            background-color: #666;
-            border-radius: 50%;
-        }
-
         .main-content {
             flex: 1;
-            padding: 20px;
+            padding: 40px;
+            padding-bottom: 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 30px;
         }
 
         .profile-info {
@@ -76,43 +48,46 @@
         }
 
         .profile-avatar {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            background-color: #333;
+            background-color: #ffffff;
             margin-bottom: 1rem;
         }
 
         .profile-name {
-            font-size: 1.5rem;
-            margin: 0;
+            font-size: 1.8rem;
+            margin: 10px 0;
+            color: #ffffff;
         }
 
         .profile-sections {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 30px;
             width: 100%;
             max-width: 1200px;
         }
 
         .section-title {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            background-color: #333;
-            border-radius: 4px;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            padding: 8px 15px;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
         }
 
         .favourites-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 20px;
+            background-color: #2a2a2a;
         }
 
         .cover-card {
-            background-color: #333;
-            border-radius: 4px;
+            
+            border-radius: 8px;
             overflow: hidden;
         }
 
@@ -123,53 +98,53 @@
         }
 
         .cover-card .title {
-            padding: 0.5rem;
-            font-size: 0.9rem;
+            padding: 10px;
+            font-size: 1rem;
         }
 
         .achievements-list {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 15px;
+            background-color: #2a2a2a;            
         }
 
         .achievement-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            background-color: #333;
-            padding: 0.75rem;
-            border-radius: 4px;
+            gap: 15px;        
+            padding: 15px;
+            border-radius: 8px;
         }
 
         .achievement-item img {
-            width: 48px;
-            height: 48px;
+            width: 64px;
+            height: 64px;
             object-fit: cover;
         }
 
         .achievement-info h3 {
             margin: 0;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            color: #ffffff;
         }
 
         .achievement-info p {
-            margin: 0;
-            font-size: 0.8rem;
-            color: #888;
-        }
-
-        .footer {
-            padding: 20px;
-            text-align: right;
-            background-color: #1a1a1a;
+            margin: 5px 0 0 0;
+            font-size: 0.9rem;
+            color: #999999;
         }
 
         @media (max-width: 768px) {
             .profile-sections {
                 grid-template-columns: 1fr;
             }
+            
+            .main-content {
+                padding: 20px;
+            }
         }
+
     </style>
 </head>
 <body>
@@ -185,41 +160,25 @@
             <section class="favourites">
                 <h2 class="section-title">Favourites</h2>
                 <div class="favourites-grid">
-                    <div class="cover-card">
-                        <img src="../media/placeholder_coverCard.png" alt="Game Cover">
-                        <div class="title">lorem ipsum</div>
+                    <div class="item">
+                        <a href="game.html" style="display: block; width: 100%; height: 100%; pointer-events: auto;">
+                            <div id="game-card1" xlu-include-file="templates/game-card.html" style="pointer-events: none;"></div>
+                        </a>
                     </div>
-                    <div class="cover-card">
-                        <img src="../media/placeholder_coverCard.png" alt="Game Cover">
-                        <div class="title">lorem ipsum</div>
+                    <div class="item">
+                        <a href="game.html" style="display: block; width: 100%; height: 100%; pointer-events: auto;">
+                            <div id="game-card2" xlu-include-file="templates/game-card.html" style="pointer-events: none;"></div>
+                        </a>
                     </div>
                 </div>
             </section>
 
-            <section class="achievements">
+            <section class="achievements" style="padding-bottom: 100px;">
                 <h2 class="section-title">Achievements earned</h2>
                 <div class="achievements-list">
-                    <div class="achievement-item">
-                        <img src="../media/placeholder_coverCard.png" alt="Achievement">
-                        <div class="achievement-info">
-                            <h3>Achievement</h3>
-                            <p>Game name - Date & time</p>
-                        </div>
-                    </div>
-                    <div class="achievement-item">
-                        <img src="../media/placeholder_coverCard.png" alt="Achievement">
-                        <div class="achievement-info">
-                            <h3>Achievement</h3>
-                            <p>Game name - Date & time</p>
-                        </div>
-                    </div>
-                    <div class="achievement-item">
-                        <img src="../media/placeholder_coverCard.png" alt="Achievement">
-                        <div class="achievement-info">
-                            <h3>Achievement</h3>
-                            <p>Game name - Date & time</p>
-                        </div>
-                    </div>
+                    <div id="achievement-item0" xlu-include-file="templates/achievement_item.html"></div>
+                    <div id="achievement-item1" xlu-include-file="templates/achievement_item.html"></div>
+                    <div id="achievement-item2" xlu-include-file="templates/achievement_item.html"></div>
                 </div>
             </section>
         </div>
