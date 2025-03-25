@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Page - Jack Of All Games</title>
     <link rel="stylesheet" href="../css/style.css?v=1">
-    <script src="../js/xlu-include-file.js"></script>
+    
+    <!--script src="../js/xlu-include-file.js"></script-->
+    <script src="../js/include-elements.js"></script>
 
 </head>
-<body>
-        <header xlu-include-file="templates/header.html"></header>
+    <body>
+        <header get-template="templates/header.html"></header>
 
         <main color: white;">
-            <div xlu-include-file="templates/search-bar.html"></div>
+            <div get-template="templates/search-bar.html"></div>
 
             <article style="background-color: #202020; margin: 0 10%; padding: 2%; flex-wrap: wrap; border-radius: 15px;">
                 <section class="game-info-card" style="display: grid; grid-template-columns: 50% 50%; column-gap: 20px; align-items: center;">
@@ -34,9 +36,6 @@
 
         </main>
         
-        <footer xlu-include-file="templates/footer.html"></footer>
-    
-
-    <script>xLuIncludeFile();</script>
-</body>
+        <footer get-template="templates/footer.html"></footer>
+    </body>
 </html>
