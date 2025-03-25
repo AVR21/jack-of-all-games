@@ -1,0 +1,25 @@
+{
+    "users": [
+        {
+        "id": 0,
+        "username": "test",
+        "password": "12345",
+        "email": "test@test.com"
+        }
+    ],
+    "games": [
+        {
+            "guid": 0,
+            "title": "This War Of Mine",
+            "platform": "PC",
+            "score": 7.6,
+            "reviews:": [
+                {
+                    "userid": 0,
+                    "score": 9,
+                    "comment": "Master piece"
+                }
+            ]
+        }
+    ]
+}
