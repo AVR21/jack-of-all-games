@@ -6,6 +6,7 @@
     transition: transform 0.2s;
     display:grid;
     cursor: pointer;
+    padding-bottom: 90px;
 
 }
 
