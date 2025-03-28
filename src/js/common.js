@@ -23,7 +23,8 @@ function loadTemplates() {
 async function fetchData() {
     try {
         const res = await fetch('data/db.json')
-        return await res.json()
+        const data =  await res.json()
+        return data
     } catch (err) {
         console.error('Error al obtener datos:', err)
     }
