@@ -1,6 +1,5 @@
 .cover-card {
     aspect-ratio: 3/4;
-    background-color: #333;
     border-radius: 5px;
     overflow: hidden;
     transition: transform 0.2s;
