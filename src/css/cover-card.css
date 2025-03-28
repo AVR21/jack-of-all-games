@@ -1,0 +1,26 @@
+.cover-card {
+    aspect-ratio: 3/4;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    display:grid;
+    cursor: pointer;
+    padding-bottom: 90px;
+
+}
+
+.cover-card:hover {
+    transform: scale(1.05);
+}
+
+.cover-card img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.cover-card .title {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+}

@@ -11,57 +11,57 @@
     "games": [
         {
           "gid": 1,
-          "titulo": "The Legend of Zelda: Breath of the Wild",
-          "plataforma": ["Nintendo Switch", "Wii U"],
-          "descripcion": "Un juego de aventura y exploración en mundo abierto.",
+          "title": "The Legend of Zelda: Breath of the Wild",
+          "platform": ["Nintendo Switch", "Wii U"],
+          "description": "Un juego de aventura y exploración en mundo abierto.",
           "score": 9.8,
           "reviews": [
-            { "usuario": "Juan", "puntuacion": 10, "comentario": "Obra maestra" },
-            { "usuario": "Maria", "puntuacion": 9.5, "comentario": "Increíble mundo abierto" }
+            { "user": "Juan", "score": 10, "review": "Obra maestra" },
+            { "user": "Maria", "score": 9.5, "review": "Increíble mundo abierto" }
           ]
         },
         {
           "gid": 2,
-          "titulo": "God of War",
-          "plataforma": ["PlayStation 4"],
-          "descripcion": "Kratos regresa en una aventura mitológica con su hijo.",
+          "title": "God of War",
+          "platform": ["PlayStation 4"],
+          "description": "Kratos regresa en una aventura mitológica con su hijo.",
           "score": 9.6,
           "reviews": [
-            { "usuario": "Carlos", "puntuacion": 9.8, "comentario": "Historia épica" },
-            { "usuario": "Ana", "puntuacion": 9.3, "comentario": "Combate brutal" }
+            { "user": "Carlos", "score": 9.8, "review": "Historia épica" },
+            { "user": "Ana", "score": 9.3, "review": "Combate brutal" }
           ]
         },
         {
           "gid": 3,
-          "titulo": "Red Dead Redemption 2",
-          "plataforma": ["PlayStation 4", "Xbox One", "PC"],
-          "descripcion": "Un mundo abierto del viejo oeste con una historia cautivadora.",
+          "title": "Red Dead Redemption 2",
+          "platform": ["PlayStation 4", "Xbox One", "PC"],
+          "description": "Un mundo abierto del viejo oeste con una historia cautivadora.",
           "score": 9.7,
           "reviews": [
-            { "usuario": "Pedro", "puntuacion": 10, "comentario": "Gráficos impresionantes" },
-            { "usuario": "Sofía", "puntuacion": 9.6, "comentario": "Historia y personajes memorables" }
+            { "user": "Pedro", "score": 10, "review": "Gráficos impresionantes" },
+            { "user": "Sofía", "score": 9.6, "review": "Historia y personajes memorables" }
           ]
         },
         {
           "gid": 4,
-          "titulo": "Elden Ring",
-          "plataforma": ["PlayStation 5", "Xbox Series X", "PC"],
-          "descripcion": "Un RPG de mundo abierto creado por FromSoftware.",
+          "title": "Elden Ring",
+          "platform": ["PlayStation 5", "Xbox Series X", "PC"],
+          "description": "Un RPG de mundo abierto creado por FromSoftware.",
           "score": 9.9,
           "reviews": [
-            { "usuario": "Luis", "puntuacion": 10, "comentario": "Desafiante y adictivo" },
-            { "usuario": "Elena", "puntuacion": 9.8, "comentario": "Mecánicas profundas y exploración increíble" }
+            { "user": "Luis", "score": 10, "review": "Desafiante y adictivo" },
+            { "user": "Elena", "score": 9.8, "review": "Mecánicas profundas y exploración increíble" }
           ]
         },
         {
           "gid": 5,
-          "titulo": "Cyberpunk 2077",
-          "plataforma": ["PlayStation 5", "Xbox Series X", "PC"],
-          "descripcion": "Un RPG futurista en la ciudad de Night City.",
+          "title": "Cyberpunk 2077",
+          "platform": ["PlayStation 5", "Xbox Series X", "PC"],
+          "description": "Un RPG futurista en la ciudad de Night City.",
           "score": 8.5,
           "reviews": [
-            { "usuario": "David", "puntuacion": 8.7, "comentario": "Historia y gráficos excelentes" },
-            { "usuario": "Carla", "puntuacion": 8.3, "comentario": "Mejor después de las actualizaciones" }
+            { "user": "David", "score": 8.7, "review": "Historia y gráficos excelentes" },
+            { "user": "Carla", "score": 8.3, "review": "Mejor después de las actualizaciones" }
           ]
         }
       ]
