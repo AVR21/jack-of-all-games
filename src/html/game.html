@@ -8,92 +8,6 @@
 
     <link rel="stylesheet" href="../css/style.css?v=1">
     
-    <!--script src="../js/xlu-include-file.js"></script-->
-    <script src="../js/include-elements.js"></script>
-
-        main {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .game-info-card {
-            display: flex;
-            flex-direction: column;
-            background-color: #202020;
-            margin: 0 5%;
-            padding: 2%;
-            border-radius: 15px;
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .game-content {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            aspect-ratio: 16 / 9;
-            border-radius: 15px;
-        }
-
-        .game-details {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 15px;
-        }
-
-        .platform-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .platform-badge {
-            background-color: forestgreen;
-            border-radius: 15px;
-            text-align: center;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        button {
-            width: 100%;
-            max-width: 200px;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            background-color: #0e0e0e !important;
-            color: white !important;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background-color: #505050 !important;
-        }
-
-        @media (min-width: 768px) {
-            .game-content {
-                flex-direction: row;
-                align-items: center;
-            }
-            .game-details {
-                text-align: left;
-                align-items: flex-start;
-            }
-        }
-    </style>
 </head>
 <body>
 <header xlu-include-file="templates/header.html"></header>
@@ -115,8 +29,28 @@
     </article>
 </main>
 
-<footer xlu-include-file="templates/footer.html"></footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script>xLuIncludeFile();</script>
-</body>
+            <article style="background-color: #202020; margin: 0 10%; padding: 2%; flex-wrap: wrap; border-radius: 15px;">
+                <section class="game-info-card" style="display: grid; grid-template-columns: 50% 50%; column-gap: 20px; align-items: center;">
+                    <iframe style="border-radius: 15px; width: 100%; height: auto; aspect-ratio: 16/9;" src="https://www.youtube.com/embed/LLKXN-2XqQQ?autoplay=1&mute=1&controls=0"></iframe>
+                    <section style="display: grid; grid-template-rows: auto 1fr 2fr 1fr; color: white">
+                        <h1>Game title</h1>
+                        <section style="display: grid; grid-template-columns: 2fr 1fr;">
+                            <h2>Platform</h2>
+                            <h2 style="background-color: gray; border-radius: 15px; text-align: center; align-content: center; width: 25%; aspect-ratio: 1;">10</h2>
+                        </section>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ut autem numquam? Autem omnis dicta est porro saepe, at adipisci enim perferendis excepturi commodi ullam unde blanditiis nihil quo mollitia.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias cumque et architecto ut autem tempora aperiam, voluptatibus non commodi. Ex, obcaecati. Doloribus, sunt id voluptatum temporibus consectetur quia enim accusamus!
+                        </p>
+                        <button style="width: 25%;height: fit-content; margin: auto;">Add to Library</button>
+                    </section>
+                </section>
+            </article>
+
+        </main>
+        
+        <footer get-template="templates/footer.html"></footer>
+        
+        <script src="../js/common.js"></script>
+    </body>
 </html>
