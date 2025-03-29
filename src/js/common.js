@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     await loadTemplates();
     await injectGameData();
+    await loadLibrary();
 
     const params = new URLSearchParams(window.location.search);
     const gameId = params.get("gid");
@@ -98,6 +99,32 @@ async function loadGamePage(gameId) {
     }
 }
 
+async function loadLibrary() {
+    const data = await fetchData();
+    if (!data || !data.games) {
+        console.error("No se encontraron datos de juegos.");
+        return;
+    }
+
+    const cards = document.querySelectorAll(".cover-card .card-vertical");
+
+    data.games.forEach((game, index) => {
+        if (index >= cards.length) return; // No modificar más tarjetas si hay menos elementos en HTML
+
+        const card = cards[index];
+        card.setAttribute("data-gid", game.gid);
+
+        const link = card.querySelector("[data-gid='link']");
+        if (link) link.href = `game.html?gid=${game.gid}`;
+
+        const img = card.querySelector("[data-gid='cover-image']");
+        if (img) img.src = `../media/${game.gid}-vert.jpg`;
+
+        const title = card.querySelector("[data-gid='title']");
+        if (title) title.textContent = game.title;
+    });
+
+}
 
 /**
  * Función que obtiene los datos del archivo JSON.

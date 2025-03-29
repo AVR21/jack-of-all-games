@@ -9,14 +9,22 @@
 
 }
 
+.card-content h3 {
+    white-space: nowrap;       
+    overflow: hidden;          
+    text-overflow: ellipsis;   
+    width: 100%;               
+    display: block;
+}
+
 .cover-card:hover {
     transform: scale(1.05);
 }
 
 .cover-card img {
     width: 100%;
-    height: 80%;
-    object-fit: cover;
+    height: 100%;
+    object-fit: fill;
 }
 
 .cover-card .title {
