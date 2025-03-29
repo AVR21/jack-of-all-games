@@ -13,6 +13,11 @@
     align-items: center;
     justify-content: center;
   }
+
+  img {
+      max-width: 100%;
+  }
+
   .card-horizontal .card-content {
     background-color: #444;
     color: #fff;
