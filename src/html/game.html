@@ -40,11 +40,22 @@
             gap: 20px;
         }
 
-        iframe {
+        .game-media {
+            position: relative;
             width: 100%;
-            height: 100%;
             aspect-ratio: 16 / 9;
             border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .game-media img,
+        .game-media iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
         }
 
         .game-details {
@@ -107,14 +118,17 @@
 <main>
     <article class="game-info-card">
         <div class="game-content">
-            <iframe src="https://www.youtube.com/embed/LLKXN-2XqQQ?autoplay=1&mute=1&controls=0" class="col-md-6"></iframe>
+            <div class="game-media">
+                <img id="game-placeholder" src="" alt="Game Image">
+                <iframe id="game-video" src="" class="col-md-6"></iframe>
+            </div>
             <section class="game-details col-md-6">
-                <h1>Game title</h1>
+                <h1 data-gid="title">Game title</h1>
                 <div class="platform-info">
-                    <h2>Platform</h2>
-                    <div class="platform-badge">10</div>
+                    <h3 data-gid="platform">Platform</h3>
+                    <div class="platform-badge" data-gid="score">10</div>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                <p data-gid="description">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                 <button>Add to Library</button>
             </section>
         </div>
