@@ -32,6 +32,7 @@
             border-radius: 15px;
             max-width: 1000px;
             width: 100%;
+            max-height: fit-content;
         }
 
         .game-content {
@@ -84,7 +85,7 @@
             justify-content: center;
         }
 
-        button {
+        .add-game {
             width: 100%;
             max-width: 200px;
             padding: 10px;
@@ -96,7 +97,7 @@
             transition: background 0.3s;
         }
 
-        button:hover {
+        .add-game:hover {
             background-color: #505050 !important;
         }
 
@@ -129,7 +130,7 @@
                     <div class="platform-badge" data-gid="score">10</div>
                 </div>
                 <p data-gid="description">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                <button>Add to Library</button>
+                <button class="add-game">Add to Library</button>
             </section>
         </div>
     </article>
