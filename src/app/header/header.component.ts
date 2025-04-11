@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { ModalComponent } from './modal/modal.component';
 
 @Component({
   selector: 'app-header',
-  imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css'],
+  standalone: true,
+  imports: [ModalComponent]
 })
-export class HeaderComponent {
-
-}
+export class HeaderComponent { }

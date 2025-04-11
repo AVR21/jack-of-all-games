@@ -1,5 +1,5 @@
 <div class="carousel" [attr.id]="carouselId">
-  <!-- Genera los radio buttons de posición -->
+
   <div class="radio-buttons">
     <ng-container *ngFor="let item of items; let i = index">
       <input type="radio"
@@ -9,22 +9,17 @@
     </ng-container>
   </div>
 
-  <!-- Contenedor del carousel -->
   <div class="carousel-container">
     <div class="item"
          #itemElement
          *ngFor="let item of items; let i = index"
          (click)="onItemClick(i)">
-      <!-- Aquí podrías tener un componente hijo para cada 'game-card'
-           o simplemente mostrar el contenido del objeto item -->
       <div class="game-card">
         <h3>{{ item.title }}</h3>
-        <!-- Se pueden agregar más datos o imágenes, según la estructura de "item" -->
       </div>
     </div>
   </div>
 
-  <!-- Botones de navegación adicionales -->
   <button id="prevSlide" (click)="prevSlide()">Prev</button>
   <button id="nextSlide" (click)="nextSlide()">Next</button>
 </div>
