@@ -1,15 +1,16 @@
-<footer class="footer-custom fixed-bottom py-2">
-  <div class="container-fluid">
-    <div class="row align-items-center text-center text-md-start">
-      <div class="col-12 col-md-6">
-        <p class="mb-0">Contact us</p>
-      </div>
-      <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end flex-wrap">
-        <a href="#" class="mx-2 link-footer facebook"><i class="fa-brands fa-facebook-f icon-responsive"></i></a>
-        <a href="#" class="mx-2 link-footer twitter"><i class="fa-brands fa-x-twitter icon-responsive"></i></a>
-        <a href="#" class="mx-2 link-footer instagram"><i class="fa-brands fa-instagram icon-responsive"></i></a>
-        <a href="#" class="mx-2 link-footer discord"><i class="fa-brands fa-discord icon-responsive"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
+.footer-custom {
+  background-color: #212121;
+  color: white;
+  padding: 1rem 0;
+}
+
+.link-footer {
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.link-footer.facebook:hover { color: #3b5998; }     /* Facebook */
+.link-footer.twitter:hover { color: #ffffff; }      /* Twitter/X */
+.link-footer.instagram:hover { color: #E1306C; }    /* Instagram */
+.link-footer.discord:hover { color: #5865F2; }      /* Discord */
