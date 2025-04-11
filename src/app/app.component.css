@@ -1,0 +1,10 @@
+html,body
+{
+    background: #303030 !important;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+        
+    margin: 0;
+    padding-top: 70px;
+}
