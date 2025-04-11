@@ -8,3 +8,14 @@ html,body
     margin: 0;
     padding-top: 70px;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+app-root {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}

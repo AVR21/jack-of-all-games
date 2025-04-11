@@ -1,15 +1,18 @@
 .footer-custom {
-  background-color: #212121;
-  color: white;
-  padding: 1rem 0;
-  position: sticky;
+  background-color: #1e1e1e;
+  color: #fff;
 }
 
-.link-footer {
-  font-size: 1.5rem;
-  color: white;
-  transition: color 0.3s ease;
+.link-footer i {
+  font-size: 1.25rem;
+  transition: transform 0.2s ease;
 }
+
+.icon-responsive {
+  width: 20px;
+  height: 20px;
+}
+
 
 .link-footer.facebook:hover { color: #3b5998; }     /* Facebook */
 .link-footer.twitter:hover { color: #ffffff; }      /* Twitter/X */
