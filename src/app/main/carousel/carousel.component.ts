@@ -1,96 +1,51 @@
-import { Component, Input, OnInit, OnDestroy, AfterViewInit, QueryList, ElementRef, ViewChildren } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
+
+interface CarouselItem {
+  title: string;
+  // añade aquí los campos que necesites (imagen, enlace, etc.)
+}
 
 @Component({
   selector: 'app-carousel',
+  imports: [],
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css'],
-  standalone: true
+  styleUrls: ['./carousel.component.css']
 })
-export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
+export class CarouselComponent {
+  /** ID único para enlazar los radio buttons */
+  @Input() carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
 
-  @Input() items: any[] = [];
-  @Input() carouselId: string = 'carousel-' + Math.floor(Math.random() * 10000);
+  /** Elementos a mostrar en el carrusel */
+  @Input() items: CarouselItem[] = [];
 
-  currentIndex = 0;
-  autoSlideInterval = 3000;
-  private autoSlideTimer: any;
+  /** Índice de la diapositiva activa */
+  currentIndex = signal(0);
 
-  @ViewChildren('itemElement') itemElements!: QueryList<ElementRef>;
-
-  ngOnInit(): void {
-    this.startAutoSlide();
+  /** Cambia directamente a la diapositiva `i` */
+  changeSlide(i: number): void {
+    this.currentIndex.set(i);
   }
 
-  ngAfterViewInit(): void {
-    this.updateCarousel();
-  }
-
-  ngOnDestroy(): void {
-    if (this.autoSlideTimer) {
-      clearInterval(this.autoSlideTimer);
-    }
-  }
-
-  startAutoSlide(): void {
-    this.autoSlideTimer = setInterval(() => {
-      this.changeSlide();
-    }, this.autoSlideInterval);
-  }
-
-  // Lógica para actualizar las transformaciones de cada "slide"
-  updateCarousel(): void {
-    const totalItems = this.items.length;
-    // Aseguramos que ya se hayan renderizado los elementos
-    if (!this.itemElements || totalItems === 0) { return; }
-
-    this.itemElements.forEach((elemRef, i) => {
-      let offset = i + 1;
-      // Cálculo similar al del JS original para un desplazamiento cíclico
-      let r = ((this.currentIndex + 1 - offset + totalItems) % totalItems);
-      if (r > totalItems / 2) r -= totalItems;
-      let absR = Math.abs(r);
-      // Escala mayor al item activo (por ejemplo, el actual vale 1.2, los demás 1)
-      let scale = i === this.currentIndex ? 1.2 : 1;
-
-      elemRef.nativeElement.style.transition = "transform 0.8s ease-in-out";
-      elemRef.nativeElement.style.transform = `rotateY(${-10 * r}deg) translateX(${-300 * r}px) scale(${scale})`;
-      elemRef.nativeElement.style.zIndex = totalItems - absR;
-    });
-  }
-
-  changeSlide(index?: number): void {
-    const totalItems = this.items.length;
-    if (typeof index === 'number') {
-      this.currentIndex = index;
-    } else {
-      this.currentIndex = (this.currentIndex + 1) % totalItems;
-    }
-    this.updateCarousel();
-  }
-
+  /** Diapositiva anterior (con wrap-around) */
   prevSlide(): void {
-    if (this.autoSlideTimer) {
-      clearInterval(this.autoSlideTimer);
-    }
-    const totalItems = this.items.length;
-    this.currentIndex = (this.currentIndex - 1 + totalItems) % totalItems;
-    this.changeSlide(this.currentIndex);
-    this.startAutoSlide();
+    const last = this.items.length - 1;
+    const prev = this.currentIndex() > 0 ? this.currentIndex() - 1 : last;
+    this.currentIndex.set(prev);
   }
 
+  /** Diapositiva siguiente (con wrap-around) */
   nextSlide(): void {
-    if (this.autoSlideTimer) {
-      clearInterval(this.autoSlideTimer);
-    }
-    this.changeSlide();
-    this.startAutoSlide();
+    const last = this.items.length - 1;
+    const next = this.currentIndex() < last ? this.currentIndex() + 1 : 0;
+    this.currentIndex.set(next);
   }
 
-  onItemClick(index: number): void {
-    if (this.autoSlideTimer) {
-      clearInterval(this.autoSlideTimer);
-    }
-    this.changeSlide(index);
-    this.startAutoSlide();
+  /** Handler al hacer click sobre un ítem (índice `i`) */
+  onItemClick(i: number): void {
+    // por ejemplo, podemos cambiar a esa slide
+    this.changeSlide(i);
+
+    // o emitir un evento, navegar, etc.
+    console.log(`Item ${i} clicked:`, this.items[i]);
   }
 }
