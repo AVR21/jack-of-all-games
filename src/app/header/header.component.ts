@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import { ModalComponent } from './modal/modal.component';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 
@@ -9,4 +9,8 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
   standalone: true,
   imports: [ModalComponent, RouterLink, RouterLinkActive]
 })
-export class HeaderComponent { }
+export class HeaderComponent
+{
+  isRegistered = signal(false);
+
+}

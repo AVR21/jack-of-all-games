@@ -6,12 +6,16 @@
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password"
+    <input [type]="type_text()"
            class="form-control"
            id="exampleInputPassword1"
-           required
-           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-           title="Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial.">
+           required>
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      (click)="visualizationPasword()"
+      [attr.aria-label]="showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'"
+    >hola</button>
 
     <small id="passwordError" class="text-danger" style="display: none;">
       La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y un carácter especial.

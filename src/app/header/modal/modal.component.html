@@ -19,15 +19,10 @@
       <div class="modal-body">
         <!-- Formulario -->
         @if(registerSelection()){
-            <app-login-form></app-login-form>
+            <app-login-form/>
         } @else if (!registerSelection())
         {
-          <form id="registerForm">
-            <div class="mb-3">
-              <!--<label for="exampleInputEmail1" class="form-label">register e-mail</label>-->
-              <input type="email">
-            </div>
-          </form>
+            <register-form/>
         }
       </div>
 
