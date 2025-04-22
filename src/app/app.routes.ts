@@ -4,5 +4,6 @@ import { AchievementCardComponent } from './achievement-card/achievement-card.co
 
 export const routes: Routes = [
     {path: 'footer', component: FooterComponent},
-    {path: 'achievement-card', component: AchievementCardComponent}
+    {path: 'achievement-card', component: AchievementCardComponent},
+    {path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
