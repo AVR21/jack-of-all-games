@@ -6,16 +6,25 @@
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input [type]="type_text()"
-           class="form-control"
-           id="exampleInputPassword1"
-           required>
-    <button
-      class="btn btn-outline-secondary"
-      type="button"
-      (click)="visualizationPasword()"
-      [attr.aria-label]="showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'"
-    >hola</button>
+    <div class="input-group">
+      <input
+        [type]="type_text()"
+        class="form-control"
+        id="exampleInputPassword1"
+        required
+      />
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        (click)="visualizationPasword()"
+        [attr.aria-label]="
+        showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'
+      "
+      >
+        <i class="fa {{ showPassword() ? 'fa-eye' : 'fa-eye-slash' }}"></i>
+      </button>
+    </div>
+
 
     <small id="passwordError" class="text-danger" style="display: none;">
       La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y un carácter especial.
