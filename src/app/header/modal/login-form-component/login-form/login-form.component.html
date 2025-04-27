@@ -1,0 +1,40 @@
+<form id="loginForm">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <div class="input-group">
+      <input
+        [type]="type_text()"
+        class="form-control"
+        id="exampleInputPassword1"
+        required
+      />
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        (click)="visualizationPasword()"
+        [attr.aria-label]="
+        showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'
+      "
+      >
+        <i class="fa {{ showPassword() ? 'fa-eye' : 'fa-eye-slash' }}"></i>
+      </button>
+    </div>
+
+
+    <small id="passwordError" class="text-danger" style="display: none;">
+      La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y un carácter especial.
+    </small>
+    <a href="#" class="text-danger">Forgot Password?</a>&nbsp;&nbsp;&nbsp;
+    <a href="#">Don't have an account?</a>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-dark">Submit</button>
+</form>
