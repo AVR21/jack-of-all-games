@@ -1,0 +1,38 @@
+import { Injectable } from '@angular/core';
+import { addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, setDoc } from '@angular/fire/firestore';
+import { Game } from '../../model/game';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class GamesService {
+
+  constructor(private firestore: Firestore) { }
+
+  addGame(game: Game) {
+    const ref = collection(this.firestore, 'games');
+    return addDoc(ref, game);
+  }
+
+  getGames(): Observable<Game[]> {
+    const ref = collection(this.firestore, 'games');
+    return collectionData(ref, {idField: 'id'}) as Observable<Game[]>;
+  }
+
+  getGameById(id: string) {
+    const ref = doc(this.firestore, `games/${id}`);
+    return docData(ref, {idField: 'id'}) as Observable<Game>;
+  }
+
+  updateGame(game: Game) {
+    const ref = doc(this.firestore, `games/${game.id}`);
+    return setDoc(ref, game);
+  }
+
+  deleteGame(game: Game) {
+    const ref = doc(this.firestore, `games/${game.id}`);
+    return deleteDoc(ref);
+  }
+
+}
