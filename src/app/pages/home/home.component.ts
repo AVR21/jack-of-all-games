@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import {CarouselComponent} from './carousel/carousel.component';
-import {SearchbarComponent} from '../components/searchbar/searchbar.component';
+import {SearchbarComponent} from '../../components/searchbar/searchbar.component';
 
 @Component({
   selector: 'app-main',
   imports: [CarouselComponent, SearchbarComponent],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-export class MainComponent {
+export class HomeComponent {
 
 }
