@@ -1,0 +1,88 @@
+.modal-content {
+  background: #292929 !important;
+  color: white !important;
+  border: none;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 0; /* Elimina espacio extra */
+  border-bottom: 1px solid #505050; /* Línea separadora sutil */
+}
+
+.authentication-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 5px; /* Espaciado mínimo con la paginación */
+}
+
+.pagination-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0; /* Elimina espacio extra */
+  padding: 0;
+}
+
+.pagination {
+  margin-bottom: 0; /* Evita espacios extra */
+}
+
+.pagination .page-item .page-link {
+  background-color: #1E1E1E; /* Color oscuro para los botones de paginación */
+  color: white !important; /* Texto en blanco */
+  border: 1px solid #505050;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #505050; /* Color más claro para el botón activo */
+  border-color: #505050;
+  color: white !important;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #505050;
+  color: white !important;
+}
+
+.btn-dark {
+  background-color: #1E1E1E !important;
+  border: none;
+  color: white !important; /* Texto blanco */
+}
+
+.btn-dark:hover {
+  background-color: #505050 !important;
+}
+
+.btn-secondary {
+  background-color: #505050 !important;
+  border: none;
+  color: white !important;
+}
+
+.btn-secondary:hover {
+  background-color: #666666 !important;
+}
+
+.form-label, .form-text, .form-check-label, .modal-body a {
+  color: white !important;
+}
+
+.form-control {
+  background-color: #505050 !important;
+  border: 1px solid #666666;
+  color: white !important;
+}
+
+.form-control::placeholder {
+  color: #d0d0d0; /* Un gris claro para los placeholders */
+}
+
+.modal-footer {
+  border-top: 1px solid #505050; /* Línea superior para separar el footer */
+}
