@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cover-card',
@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   templateUrl: './cover-card.component.html',
   styleUrl: './cover-card.component.css'
 })
-export class CoverCardComponent {
+export class CoverCardComponent{
+
+  @Input() title: string = "";
+  @Input() imgPath: string = "";
+
+  constructor() {}
+
 
 }
