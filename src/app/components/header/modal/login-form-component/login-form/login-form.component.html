@@ -1,14 +1,15 @@
 <form id="loginForm">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+           [value]="email()" (input)="email.set(txtEmail.value)"#txtEmail>
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <div class="input-group">
       <input
-        [type]="type_text()"
+        [type]="type_text()" [value]="password()" (input)="password.set(txtPassword.value)"#txtPassword
         class="form-control"
         id="exampleInputPassword1"
         required
@@ -16,7 +17,7 @@
       <button
         class="btn btn-outline-secondary"
         type="button"
-        (click)="visualizationPasword()"
+        (click)="visualizationPassword()"
         [attr.aria-label]="
         showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'
       "
