@@ -67,8 +67,8 @@ export class LibraryComponent implements OnInit{
     }
   }
 
-  selectCard(route: string, params = []) {
-    this.router.navigate([route]);
+  selectCard(id: string) {
+    this.router.navigate(['game'], {queryParams: {gid: id}});
   }
 
 }
