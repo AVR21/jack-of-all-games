@@ -9,5 +9,5 @@ export const routes: Routes = [
     {path: 'library', component: LibraryComponent},
     {path: 'game', component: GamePageComponent},
     {path: 'game-form', component: GameFormComponent},
-    {path: '*', redirectTo: '/home', pathMatch: 'full'},
+    {path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];

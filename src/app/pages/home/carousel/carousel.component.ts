@@ -1,4 +1,5 @@
 import { Component, Input, signal } from '@angular/core';
+import { Game } from '../../../models/game';
 
 interface CarouselItem {
   title: string;
@@ -16,7 +17,11 @@ export class CarouselComponent {
   @Input() carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
 
   /** Elementos a mostrar en el carrusel */
-  @Input() items: CarouselItem[] = [];
+  //@Input() items: string[] = [];
+
+  // Propuesta, en vez de pasar items de tipo interfaz lo que sea, le pasas objetos de tipo Game o tuplas de titulo + imgPath
+  @Input() items!: Game[];
+
 
   /** Índice de la diapositiva activa */
   currentIndex = signal(0);
