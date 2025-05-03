@@ -15,13 +15,13 @@
   @if (games.length > 1) {
     <div class="item" [style.--offset]="0">
       <app-game-card
-        [title]="games[games.length - 2]?.title"
+        [title]="games[games.length - 2].title"
         [imgPath]="getImage(games[games.length - 2])"
       ></app-game-card>
     </div>
     <div class="item" [style.--offset]="1">
       <app-game-card
-        [title]="games[games.length - 1]?.title"
+        [title]="games[games.length - 1].title"
         [imgPath]="getImage(games[games.length - 1])"
       ></app-game-card>
     </div>
