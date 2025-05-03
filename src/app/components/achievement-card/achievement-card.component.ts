@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-achievement-card',
@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./achievement-card.component.css']
 })
 export class AchievementCardComponent {
-  
+  @Input() achievement!: {
+    id: number;
+    title: string;
+    game: string;
+    date: string;
+    image: string;
+  };
 }

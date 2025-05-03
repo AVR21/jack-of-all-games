@@ -65,7 +65,8 @@ export class GameFormComponent {
       media: {
         img: images.length > 0 ? images : [],
         video: value.video || null
-      }
+      },
+      isFavorite: false
     };
 
     this.gamesService.addGame(newGame).then(() => {

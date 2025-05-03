@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { signal } from '@angular/core';
 import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile, User } from '@angular/fire/auth';
 import { defer, from, Observable, switchMap } from 'rxjs';
 
@@ -7,7 +8,13 @@ import { defer, from, Observable, switchMap } from 'rxjs';
 })
 export class AuthService {
 
-  constructor(private auth: Auth) {}
+  user = signal<User | null>(null); //señal pública accesible desde componentes
+
+  constructor(private auth: Auth) {
+    authState(this.auth).subscribe(user => {
+      this.user.set(user);
+    });
+  }
 
   login(email: string, password: string): Observable<any> {
     const res = () => signInWithEmailAndPassword(this.auth, email, password);

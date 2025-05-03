@@ -1,0 +1,34 @@
+<main class="user-profile container">
+
+    <section class="profile-header">
+      <img class="avatar" [src]="user()?.photoURL || '../../../images/placeholder_profile'" alt="User avatar">
+      <h2>{{ user()?.displayName }}</h2>
+    </section>
+  
+    <div class="user-content">
+      <section class="favorites">
+        <h3>Favourites</h3>
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 g-3">
+          @for (game of favoriteGames(); track game.id) {
+            <div class="col">
+              <app-cover-card 
+                [imgPath]="getImage(game)"
+                [title]="game.title"
+                (click)="selectGame(game.id)">
+              </app-cover-card>
+            </div>
+          }
+        </div>
+      </section>
+  
+      <section class="achievements">
+        <h3>Achievements earned</h3>
+        <div class="achievement-list">
+          @for (achievement of achievements(); track achievement.id) {
+            <app-achievement-card [achievement]="achievement"></app-achievement-card>
+          }
+        </div>
+      </section>
+    </div>
+  
+  </main>

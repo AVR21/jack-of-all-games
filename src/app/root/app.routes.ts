@@ -4,6 +4,7 @@ import { GameFormComponent } from '../pages/game-form/game-form.component';
 import { LibraryComponent } from '../pages/library/library.component';
 import { GamePageComponent } from '../pages/game-page/game-page.component';
 import { GameCardComponent } from '../components/game-card/game-card.component';
+import { UserPageComponent } from '../pages/user-page/user-page.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -11,5 +12,6 @@ export const routes: Routes = [
     {path: 'game', component: GamePageComponent},
     {path: 'game-form', component: GameFormComponent},
     {path: 'tests', component: GameCardComponent},
+    { path: 'user', component: UserPageComponent },
     {path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];
