@@ -56,7 +56,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
 
 
   getImage(game: Game): string {
-    return game.media?.img?.[0] ?? '/public/images/logo.png';
+    return game.media?.img?.[1] ?? '/public/images/logo.png';
   }
 
   private disableTransition() {
