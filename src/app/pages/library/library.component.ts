@@ -3,7 +3,7 @@ import { SearchbarComponent } from "../../components/searchbar/searchbar.compone
 import { CoverCardComponent } from "../../components/cover-card/cover-card.component";
 import { AuthService } from '../../services/auth/auth.service';
 import { GamesService } from '../../services/games/games.service';
-import { Game } from '../../model/game';
+import { Game } from '../../models/game';
 import { Router } from '@angular/router';
 
 @Component({

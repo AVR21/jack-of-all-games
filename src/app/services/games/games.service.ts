@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, setDoc } from '@angular/fire/firestore';
-import { Game } from '../../model/game';
+import { Game } from '../../models/game';
 import { Observable } from 'rxjs';
 
 @Injectable({

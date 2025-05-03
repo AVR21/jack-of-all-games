@@ -2,8 +2,8 @@ import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { GamesService } from '../../services/games/games.service';
-import { Game } from '../../model/game';
-import { Platforms } from '../../model/platforms';
+import { Game } from '../../models/game';
+import { Platforms } from '../../models/platforms';
 
 @Component({
   selector: 'app-game-form',
