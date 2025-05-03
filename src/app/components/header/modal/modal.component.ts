@@ -8,14 +8,10 @@ import {RegisterFormComponent} from './login-form-component/register-form/regist
   styleUrl: './modal.component.css'
 })
 export class ModalComponent {
-registerSelection = signal(true);
-changeRegisterSelection(sign : number) {
-  if(sign == 0)
-  {
-    this.registerSelection.set(true);
-  }else if(sign == 1) {
-    this.registerSelection.set(false);
+  readonly registerSelection = signal(true);
+
+  changeRegisterSelection(sign: 0 | 1): void {
+    this.registerSelection.set(sign === 0);
   }
-}
 
 }

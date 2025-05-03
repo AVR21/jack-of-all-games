@@ -1,41 +1,44 @@
-<form id="loginForm">
+<form id="loginForm" (submit)="userLogin($event)">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-           [value]="email()" (input)="email.set(txtEmail.value)"#txtEmail>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="email" class="form-label">Email address</label>
+    <input
+      id="email"
+      type="email"
+      class="form-control"
+      [value]="email()"
+      (input)="email.set(txtEmail.value)"#txtEmail
+      required
+    />
+    <div class="form-text">We'll never share your email.</div>
   </div>
+
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <label for="pwd" class="form-label">Password</label>
     <div class="input-group">
       <input
-        [type]="type_text()" [value]="password()" (input)="password.set(txtPassword.value)"#txtPassword
+        id="pwd"
         class="form-control"
-        id="exampleInputPassword1"
+        [value]="password()"
+        (input)="password.set(txtPassword.value)"#txtPassword
         required
       />
       <button
-        class="btn btn-outline-secondary"
         type="button"
-        (click)="visualizationPassword()"
-        [attr.aria-label]="
-        showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'
-      "
+        class="btn btn-outline-secondary"
+        (click)="togglePassword()"
+        [attr.aria-label]="showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'"
       >
-        <i class="fa {{ showPassword() ? 'fa-eye' : 'fa-eye-slash' }}"></i>
+        <i class="fa"
+           [class.fa-eye]="showPassword()"
+           [class.fa-eye-slash]="!showPassword()"></i>
       </button>
     </div>
-
-
-    <small id="passwordError" class="text-danger" style="display: none;">
-      La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y un carácter especial.
-    </small>
-    <a href="#" class="text-danger">Forgot Password?</a>&nbsp;&nbsp;&nbsp;
-    <a href="#">Don't have an account?</a>
   </div>
+
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <input type="checkbox" class="form-check-input" id="remember" />
+    <label class="form-check-label" for="remember">Remember me</label>
   </div>
+
   <button type="submit" class="btn btn-dark">Submit</button>
 </form>
