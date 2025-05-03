@@ -16,10 +16,10 @@
 <div class="carousel-container">
   @for (item of items; track $index) {
     <div class="item" (click)="onItemClick($index)">
-      <div class="game-card">
-        <h3>{{ item.title }}</h3>
-        <img [src]="item.media.img![1]">
-      </div>
+      <app-game-card
+        [imgPath]="item.media.img![1]"
+        [title]="item.title">
+      </app-game-card>
     </div>
   }
 </div>

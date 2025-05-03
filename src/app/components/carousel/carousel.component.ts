@@ -1,5 +1,6 @@
 import { Component, Input, signal } from '@angular/core';
-import { Game } from '../../../models/game';
+import { Game } from '../../models/game';
+import { GameCardComponent } from "../game-card/game-card.component";
 
 interface CarouselItem {
   title: string;
@@ -8,7 +9,7 @@ interface CarouselItem {
 
 @Component({
   selector: 'app-carousel',
-  imports: [],
+  imports: [GameCardComponent],
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css']
 })

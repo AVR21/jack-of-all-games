@@ -1,12 +1,16 @@
 <app-searchbar></app-searchbar>
+
 <h1>NEWS</h1>
-<app-carousel
-[items]="gamesList"></app-carousel>
+<div>
+  <app-carousel
+    [items]="gamesList">
+  </app-carousel>
+</div>
 
 @if(isRegistered())
   {
     <h1>COMMUNITY</h1>
-      <app-carousel
-        [items]="gamesList">
-      </app-carousel>
+    <app-carousel
+      [items]="gamesList">
+    </app-carousel>
   }

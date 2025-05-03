@@ -1,5 +1,5 @@
 import {Component, signal} from '@angular/core';
-import {CarouselComponent} from './carousel/carousel.component';
+import {CarouselComponent} from '../../components/carousel/carousel.component';
 import {SearchbarComponent} from '../../components/searchbar/searchbar.component';
 import { GamesService } from '../../services/games/games.service';
 import { Router } from '@angular/router';
