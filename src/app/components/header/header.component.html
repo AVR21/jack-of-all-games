@@ -18,10 +18,17 @@
       </ul>
     </div>
     <div class="d-flex align-items-center">
-      <button class="btn-color-personal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      @if (isRegistered()) {
+        <button class="btn-color-personal"  (click)="logOut()">
         <img src="/public/images/placeholder_profile.jpg" alt="User " class="auth-img">
-      </button>
-      <app-modal></app-modal>
+        </button>
+      } @else {
+        <button class="btn-color-personal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img src="/public/images/placeholder_profile.jpg" alt="User " class="auth-img">
+        </button>
+        <app-modal></app-modal>
+      }
+
     </div>
   </div>
 </nav>

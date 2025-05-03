@@ -1,6 +1,6 @@
 import {Component, output, signal} from '@angular/core';
 import {AuthService} from '../../../../../services/auth/auth.service';
-import {User} from '@angular/fire/auth';
+import {user, User} from '@angular/fire/auth';
 
 @Component
 ({
@@ -23,7 +23,7 @@ export class RegisterFormComponent
   {
     if(this.email && this.username && this.password())
     {
-      this.authService.signup(this.email(), this.username(), this.password()).subscribe(
+      this.authService.signup(this.email(),this.password(), this.username()).subscribe(
         {
           next: result =>
           {
@@ -31,7 +31,7 @@ export class RegisterFormComponent
           },
           error: error =>
           {
-            console.log(error);
+            console.log("Error en el registro", error);
           }
         });
     }
