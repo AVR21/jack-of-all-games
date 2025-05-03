@@ -30,10 +30,10 @@ export class CarouselComponent implements OnInit, OnDestroy {
   goNext() {
     this.position++;
 
-    if (this.position > this.games.length + 2) {
+    if (this.position > this.games.length + 1) {
       setTimeout(() => {
         this.disableTransition();
-        this.position = 2;
+        this.position = 1;
         this.forceReflow();
         this.enableTransition();
       }, 20);
