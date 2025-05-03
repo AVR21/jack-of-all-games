@@ -1,6 +1,6 @@
 <div class="search-container">
-  <form class="search-form">
-    <input type="text" class="search-input" placeholder="Search...">
+  <form class="search-form" autocomplete="off">
+    <input type="text" class="search-input" placeholder="Search..." [value]="searchQuery" (input)="onSearch($event)">
     <button type="submit" class="search-button">
       <i class="fas fa-search"></i>
     </button>

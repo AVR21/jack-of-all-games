@@ -1,0 +1,53 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()" style="text-align:center; color: white; display: grid; grid-template-rows: auto;">
+    <label style="margin: 20px">
+      Título:
+      <input formControlName="title" />
+    </label>
+
+    <label style="margin: 20px">
+        Compañía:
+        <input formControlName="company" />
+      </label>
+
+    <div>
+        <label style="margin: 20px;">Plataformas:</label>
+            @for (key of platformsKeys; track key) {
+                <label style="display:block; margin: 0 50px;">
+                    <input type="checkbox" [value]="key" (change)="onPlatformChange($event)" />
+                    {{ platforms[key] }}
+                </label>
+        }
+    </div>
+
+    <label style="margin: 20px;">
+        URL de Imagen Vertical (opcional):
+        <input formControlName="imgVertical" />
+    </label>
+
+    <label style="margin: 20px;">
+        URL de Imagen Horizontal (opcional):
+        <input formControlName="imgHorizontal" />
+    </label>
+
+
+    <label style="margin: 20px">
+        URL del Video (opcional):
+        <input formControlName="video" />
+    </label>
+
+    <label style="margin: 20px">
+      Descripción:
+      <textarea formControlName="description"></textarea>
+    </label>
+
+    <label style="margin: 20px">
+      Puntuación:
+      <input type="number" formControlName="score" />
+    </label>
+
+    <button type="submit" [disabled]="form.invalid || loading()">Agregar Juego</button>
+
+    @if (success()) {
+        <p>Juego agregado correctamente.</p>
+    }
+  </form>

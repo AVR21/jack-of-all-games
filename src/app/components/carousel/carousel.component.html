@@ -1,0 +1,28 @@
+<div class="carousel" id="{{ carouselId }}">
+  <!-- los botones de radio -->
+  <div class="radio-buttons">
+    @for (item of items; track $index) {
+      <input
+      type="radio"
+      name="position-{{ carouselId }}"
+      [checked]="$index === currentIndex()"
+      (click)="changeSlide($index)"
+    />
+    } 
+  </div>
+</div>
+
+<!-- las diapositivas -->
+<div class="carousel-container">
+  @for (item of items; track $index) {
+    <div class="item" (click)="onItemClick($index)">
+      <app-game-card
+        [imgPath]="item.media.img![1]"
+        [title]="item.title">
+      </app-game-card>
+    </div>
+  }
+</div>
+
+<button id="prevSlide" (click)="prevSlide()">Prev</button>
+<button id="nextSlide" (click)="nextSlide()">Next</button>
