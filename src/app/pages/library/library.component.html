@@ -1,11 +1,14 @@
-<div class="row g-0" style="margin: 0; align-items: center; justify-content: center;">
+<main class="main" style="overflow-y: auto; min-height: 100vh;">
+    
     <app-searchbar></app-searchbar>
-
-    @for (game of gamesList; track game.id) {
-        <div class="cover-card col-5 col-sm-5 col-md-4 col-lg-2 mb-0" style="display: flex; align-items: center; justify-content: center;">
-            <app-cover-card
-            [imgPath]="getImage(game)"
-            [title]="game.title"></app-cover-card>
-        </div>
-    }
-</div>
+    
+    <div class="row col row-cols-6 g-4" style="justify-content: center; margin-top: 2vh;">
+        @for (game of gamesList; track game.id) {
+            <div class="col" style="display: flex; justify-content: center;">
+                <app-cover-card (click)="goTo('/home', [])" 
+                [imgPath]="getImage(game)"
+                [title]="game.title"></app-cover-card>
+            </div>
+        }
+    </div>
+</main>

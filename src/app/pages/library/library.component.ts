@@ -4,6 +4,7 @@ import { CoverCardComponent } from "../../components/cover-card/cover-card.compo
 import { AuthService } from '../../services/auth/auth.service';
 import { GamesService } from '../../services/games/games.service';
 import { Game } from '../../model/game';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-library',
@@ -16,10 +17,13 @@ export class LibraryComponent {
   protected gamesList: Game[] = [];
   
 
-  constructor(private authService: AuthService, private gamesService: GamesService) {
-    this.gamesService.getGames().subscribe((res) => {
-      this.gamesList = res;
-    })
+  constructor(
+    private authService: AuthService, 
+    private gamesService: GamesService,
+    private router: Router) {
+      this.gamesService.getGames().subscribe((res) => {
+        this.gamesList = res;
+      });
   }
 
   getImage(game: Game): string {
@@ -28,6 +32,10 @@ export class LibraryComponent {
     } else {
       return "/public/images/logo.png";
     }
+  }
+
+  goTo(route: string, params = []) {
+    this.router.navigate([route]);
   }
 
 }
