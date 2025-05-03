@@ -30,11 +30,30 @@ export class LibraryComponent implements OnInit{
     });
   }
 
-  get filteredGames(): Game[] {
-    return this.gamesList.filter((game) =>
-      game.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+  get filteredGames() {
+    const query = this.searchQuery.trim().toLowerCase();
+  
+    if (query.startsWith('name:')) {
+      const nameQuery = query.replace('name:', '').trim();
+      return this.gamesList.filter(game =>
+        game.title.toLowerCase().includes(nameQuery)
+      );
+    }
+  
+    if (query.startsWith('company:')) {
+      const companyQuery = query.replace('company:', '').trim();
+      return this.gamesList.filter(game =>
+        game.company?.toLowerCase().includes(companyQuery)
+      );
+    }
+  
+    // Si no hay prefijo, buscar en ambos campos
+    return this.gamesList.filter(img =>
+      img.title?.toLowerCase().includes(query) ||
+      img.company?.toLowerCase().includes(query)
     );
   }
+  
 
   onSearch(query: string) {
     this.searchQuery = query;
