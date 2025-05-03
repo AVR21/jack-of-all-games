@@ -1,15 +1,7 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  OnInit,
-  OnDestroy,
-  Renderer2,
-  ElementRef,
-} from '@angular/core';
+import {Component, EventEmitter, Input, Output, OnInit, OnDestroy, Renderer2, ElementRef,} from '@angular/core';
 import { Game } from '../../models/game';
 import { GameCardComponent } from '../game-card/game-card.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -25,7 +17,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   position = 2;
   private intervalId: any;
 
-  constructor(private renderer: Renderer2, private elRef: ElementRef) {}
+  constructor(private renderer: Renderer2, private elRef: ElementRef, private router: Router) {}
 
   ngOnInit(): void {
     this.intervalId = setInterval(() => this.goNext(), 3500);
@@ -41,7 +33,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
     if (this.position > this.games.length + 2) {
       setTimeout(() => {
         this.disableTransition();
-        this.position = 2; // primer real
+        this.position = 2;
         this.forceReflow();
         this.enableTransition();
       }, 20);
@@ -78,7 +70,11 @@ export class CarouselComponent implements OnInit, OnDestroy {
   }
 
   private forceReflow() {
-    // fuerza reflow para que Angular reprocese el cambio de clase antes del cambio de posición
     this.elRef.nativeElement.offsetHeight;
   }
+
+  selectCard(id: string) {
+    this.router.navigate(['game'], {queryParams: {gid: id}});
+  }
+
 }

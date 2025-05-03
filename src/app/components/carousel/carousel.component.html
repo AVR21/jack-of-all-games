@@ -12,7 +12,6 @@
   [style.--items]="games.length + 4"
   [style.--position]="position"
 >
-  <!-- Clones de los dos últimos elementos al principio -->
   @if (games.length > 1) {
     <div class="item" [style.--offset]="0">
       <app-game-card
@@ -34,10 +33,9 @@
       [style.--offset]="$index + 2"
       (click)="cardClicked.emit(game.id!)"
     >
-      <app-game-card
-        [title]="game.title"
-        [imgPath]="getImage(game)"
-      ></app-game-card>
+      <app-game-card (click)="selectCard(game.id!)"
+                     [title]="game.title"
+        [imgPath]="getImage(game)"></app-game-card>
     </div>
   }
 
@@ -49,7 +47,7 @@
       ></app-game-card>
     </div>
     <div class="item" [style.--offset]="games.length + 3">
-      <app-game-card
+      <app-game-card>
         [title]="games[1]?.title"
         [imgPath]="getImage(games[1])"
       ></app-game-card>
