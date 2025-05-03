@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CoverCardComponent{
 
-  @Input() title: string = "";
+  @Input() title: string | undefined = "";
   @Input() imgPath: string = "";
 
   constructor() {}

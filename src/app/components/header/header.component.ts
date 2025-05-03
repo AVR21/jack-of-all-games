@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   standalone: true,
-  imports: [ModalComponent, RouterLink]
+  imports: [ModalComponent]
 })
 export class HeaderComponent
 {
