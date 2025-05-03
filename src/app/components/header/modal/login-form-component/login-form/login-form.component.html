@@ -19,6 +19,7 @@
         id="pwd"
         class="form-control"
         [value]="password()"
+        [type]="type_text()"
         (input)="password.set(txtPassword.value)"#txtPassword
         required
       />
