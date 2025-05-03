@@ -2,7 +2,7 @@ export interface Game {
   id?: string,
   title: string,
   platform: string[],
-  media?: {
+  media: {
     img?: string[],
     video?: string,
   }

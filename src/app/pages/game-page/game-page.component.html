@@ -1,0 +1,26 @@
+@if (game){
+<main>
+    <article class="game-info-card">
+        <div class="game-content">
+            <div class="game-media">
+                @if (hasVideo) {
+                    <iframe [src]="videoURL" width="560" height="315" frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                } @else {
+                    <img id="game-placeholder" [src]="getImage()">
+                }
+            </div>
+            <section class="game-details col-md-6">
+                <h1 data-gid="title">{{ game.title }}</h1>
+                <div class="platform-info">
+                    <h3 data-gid="platform"></h3>
+                    <div class="platform-badge" data-gid="score">{{ game.score }}</div>
+                </div>
+                <p data-gid="description">{{ game.description }}</p>
+                <button class="add-game">Add to Library</button>
+            </section>
+        </div>
+    </article>
+</main>
+}
