@@ -1,11 +1,11 @@
-<main class="main" style="overflow-y: auto; min-height: 110vh;">
+<main class="main" style="overflow-y: auto; min-height: 100vh;">
     
-    <app-searchbar></app-searchbar>
+    <app-searchbar (searchChange)="onSearch($event)"></app-searchbar>
     
     <div class="row col row-cols-6 g-4" style="justify-content: center; margin-top: 2vh;">
-        @for (game of gamesList; track game.id) {
+        @for (game of filteredGames; track game.id) {
             <div class="col" style="display: flex; justify-content: center;">
-                <app-cover-card (click)="goTo('/home', [])" 
+                <app-cover-card (click)="selectCard('/home', [])" 
                 [imgPath]="getImage(game)"
                 [title]="game.title"></app-cover-card>
             </div>
