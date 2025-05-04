@@ -1,9 +1,9 @@
 <article class="achievement-card">
   <section class="achievement-image">
-    <img style="background-size: contain" alt="Imagen del juego" src="../media/placeholder_logo.png">
+    <img style="background-size: contain" alt="Imagen del juego" [src]="achievement.image">
   </section>
   <section class="achievement-details">
-    <h3>Achievement</h3>
-    <p>Game name - Date & time</p>
+    <h3>{{ achievement.title }}</h3>
+    <p>{{ achievement.game }} - {{ achievement.date }}</p>
   </section>
 </article>

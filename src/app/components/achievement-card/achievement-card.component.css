@@ -29,9 +29,10 @@
   .achievement-card .achievement-details h3 {
     margin: 0;
     font-size: 1.2rem;
+    color: black !important;
   }
   .achievement-card .achievement-details p {
     margin: 2px 0 0 0;
     font-size: 0.9rem;
-    color: #555;
+    color: black !important;
   }

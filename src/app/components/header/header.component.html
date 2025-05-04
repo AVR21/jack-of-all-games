@@ -11,20 +11,19 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="library">Library</a></li>
-        <li class="nav-item"><a class="nav-link" href="user">User</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="home" routerLinkActive="active" > <!--href="home"--><b>Home</b></a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="library" routerLinkActive="active" ><b>Library</b></a></li>
       </ul>
     </div>
 
     <div class="d-flex align-items-center">
       @if (isRegistered()) {
-        <div class="custom-dropdown" (click)="toggleDropdown()" [class.open]="dropdownOpen">
+        <div class="custom-dropdown" (click)="toggleDropdown()" [class.open]="dropdownOpen()">
           <img src="/public/images/placeholder_profile.jpg" alt="User" class="auth-img" />
 
-          @if(dropdownOpen){
+          @if(dropdownOpen()){
           <ul class="dropdown-list" >
-            <li (click)="goToProfile()">Profile</li>
+            <li (click)="movePage('user')">Profile</li>
             <li (click)="logOut()">Log out</li>
           </ul>
           }

@@ -28,14 +28,14 @@ export class UserPageComponent {
       title: 'First Blood',
       game: 'Game A',
       date: '2025-04-12 15:30',
-      image: 'assets/achievements/first-blood.png'
+      image: 'assets/logo.png'
     },
     {
       id: 2,
       title: 'Master Explorer',
       game: 'Game B',
       date: '2025-04-20 19:00',
-      image: 'assets/achievements/explorer.png'
+      image: 'assets/logo.png'
     }
   ]);
 

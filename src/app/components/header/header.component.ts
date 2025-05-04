@@ -8,12 +8,12 @@ import {AuthService} from '../../services/auth/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   standalone: true,
-  imports: [ModalComponent]
+  imports: [ModalComponent, RouterLink]
 })
 export class HeaderComponent implements OnInit
 {
   isRegistered = signal(false);
-  dropdownOpen = false;
+  dropdownOpen = signal(false);
   constructor(private auth: AuthService, private router: Router) {}
   ngOnInit()
   {
@@ -34,18 +34,21 @@ export class HeaderComponent implements OnInit
   {
     this.auth.logout().subscribe(
       {
-        next: () => { this.isRegistered.set(false); },
+        next: () => { 
+          this.isRegistered.set(false); 
+          this.movePage('home');
+        },
         error: () => { console.log("logout"); },
       });
+      
   }
 
   toggleDropdown() {
-    this.dropdownOpen = !this.dropdownOpen;
+    this.dropdownOpen.set(!this.dropdownOpen());
   }
 
-  goToProfile() {
-    this.dropdownOpen = false;
-    this.router.navigate(['/profile']);
+  movePage(route: string) {
+    this.router.navigate([route]);
   }
 
 
