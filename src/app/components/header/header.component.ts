@@ -1,6 +1,6 @@
 import {Component, OnInit, signal} from '@angular/core';
 import { ModalComponent } from './modal/modal.component';
-import { RouterLink } from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
@@ -13,8 +13,8 @@ import {AuthService} from '../../services/auth/auth.service';
 export class HeaderComponent implements OnInit
 {
   isRegistered = signal(false);
-
-  constructor(private auth: AuthService) {}
+  dropdownOpen = false;
+  constructor(private auth: AuthService, private router: Router) {}
   ngOnInit()
   {
     this.auth.getAuthState().subscribe(state =>
@@ -39,7 +39,14 @@ export class HeaderComponent implements OnInit
       });
   }
 
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
 
+  goToProfile() {
+    this.dropdownOpen = false;
+    this.router.navigate(['/profile']);
+  }
 
 
 }

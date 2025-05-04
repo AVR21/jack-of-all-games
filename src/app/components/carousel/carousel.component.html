@@ -1,28 +1,59 @@
-<div class="carousel" id="{{ carouselId }}">
-  <!-- los botones de radio -->
-  <div class="radio-buttons">
-    @for (item of items; track $index) {
-      <input
-      type="radio"
-      name="position-{{ carouselId }}"
-      [checked]="$index === currentIndex()"
-      (click)="changeSlide($index)"
-    />
-    } 
-  </div>
-</div>
+@for (game of games; track $index) {
+  <input
+    type="radio"
+    name="position"
+    class="hidden-radio"
+    [checked]="$index + 2 === position"
+  />
+}
 
-<!-- las diapositivas -->
-<div class="carousel-container">
-  @for (item of items; track $index) {
-    <div class="item" (click)="onItemClick($index)">
+<main
+  id="carousel"
+  [style.--items]="games.length + 4"
+  [style.--position]="position"
+>
+  @if (games.length > 1) {
+    <div class="item" [style.--offset]="0">
       <app-game-card
-        [imgPath]="item.media.img![1]"
-        [title]="item.title">
-      </app-game-card>
+        [title]="games[games.length - 2].title"
+        [imgPath]="getImage(games[games.length - 2])"
+      ></app-game-card>
+    </div>
+    <div class="item" [style.--offset]="1">
+      <app-game-card
+        [title]="games[games.length - 1].title"
+        [imgPath]="getImage(games[games.length - 1])"
+      ></app-game-card>
     </div>
   }
-</div>
 
-<button id="prevSlide" (click)="prevSlide()">Prev</button>
-<button id="nextSlide" (click)="nextSlide()">Next</button>
+  @for (game of games; track $index) {
+    <div
+      class="item"
+      [style.--offset]="$index + 2"
+      (click)="cardClicked.emit(game.id!)"
+    >
+      <app-game-card (click)="selectCard(game.id!)"
+                     [title]="game.title"
+        [imgPath]="getImage(game)"></app-game-card>
+    </div>
+  }
+
+  @if (games.length > 1) {
+    <div class="item" [style.--offset]="games.length + 2">
+      <app-game-card
+        [title]="games[0].title"
+        [imgPath]="getImage(games[0])"
+      ></app-game-card>
+    </div>
+    <div class="item" [style.--offset]="games.length + 3">
+      <app-game-card>
+        [title]="games[1]?.title"
+        [imgPath]="getImage(games[1])"
+      ></app-game-card>
+    </div>
+  }
+
+  <button class="nav-button left" (click)="goPrev()">&#10094;</button>
+  <button class="nav-button right" (click)="goNext()">&#10095;</button>
+</main>

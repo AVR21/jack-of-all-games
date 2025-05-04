@@ -1,57 +1,80 @@
-import { Component, Input, signal } from '@angular/core';
+import {Component, EventEmitter, Input, Output, OnInit, OnDestroy, Renderer2, ElementRef,} from '@angular/core';
 import { Game } from '../../models/game';
-import { GameCardComponent } from "../game-card/game-card.component";
-
-interface CarouselItem {
-  title: string;
-  // añade aquí los campos que necesites (imagen, enlace, etc.)
-}
+import { GameCardComponent } from '../game-card/game-card.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
+  standalone: true,
   imports: [GameCardComponent],
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.css'],
 })
-export class CarouselComponent {
-  /** ID único para enlazar los radio buttons */
-  @Input() carouselId = `carousel-${Math.random().toString(36).substr(2, 9)}`;
+export class CarouselComponent implements OnInit, OnDestroy {
+  @Input({ required: true }) games: Game[] = [];
+  @Output() cardClicked = new EventEmitter<string>();
 
-  /** Elementos a mostrar en el carrusel */
-  //@Input() items: string[] = [];
+  position = 2;
+  private intervalId: any;
 
-  // Propuesta, en vez de pasar items de tipo interfaz lo que sea, le pasas objetos de tipo Game o tuplas de titulo + imgPath
-  @Input() items!: Game[];
+  constructor(private renderer: Renderer2, private elRef: ElementRef, private router: Router) {}
 
-
-  /** Índice de la diapositiva activa */
-  currentIndex = signal(0);
-
-  /** Cambia directamente a la diapositiva `i` */
-  changeSlide(i: number): void {
-    this.currentIndex.set(i);
+  ngOnInit(): void {
+    this.intervalId = setInterval(() => this.goNext(), 3500);
   }
 
-  /** Diapositiva anterior (con wrap-around) */
-  prevSlide(): void {
-    const last = this.items.length - 1;
-    const prev = this.currentIndex() > 0 ? this.currentIndex() - 1 : last;
-    this.currentIndex.set(prev);
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
   }
 
-  /** Diapositiva siguiente (con wrap-around) */
-  nextSlide(): void {
-    const last = this.items.length - 1;
-    const next = this.currentIndex() < last ? this.currentIndex() + 1 : 0;
-    this.currentIndex.set(next);
+  goNext() {
+    this.position++;
+
+    if (this.position > this.games.length + 1) {
+      setTimeout(() => {
+        this.disableTransition();
+        this.position = 1;
+        this.forceReflow();
+        this.enableTransition();
+      }, 20);
+    }
   }
 
-  /** Handler al hacer click sobre un ítem (índice `i`) */
-  onItemClick(i: number): void {
-    // por ejemplo, podemos cambiar a esa slide
-    this.changeSlide(i);
+  goPrev() {
+    this.position--;
 
-    // o emitir un evento, navegar, etc.
-    console.log(`Item ${i} clicked:`, this.items[i]);
+    if (this.position < 1) {
+      setTimeout(() => {
+        this.disableTransition();
+        this.position = this.games.length + 2;
+        this.forceReflow();
+        this.enableTransition();
+      }, 20);
+    }
   }
+
+
+
+  getImage(game: Game): string {
+    return game.media?.img?.[1] ?? '/public/images/logo.png';
+  }
+
+  private disableTransition() {
+    this.renderer.addClass(this.elRef.nativeElement, 'no-transition');
+  }
+
+  private enableTransition() {
+    setTimeout(() => {
+      this.renderer.removeClass(this.elRef.nativeElement, 'no-transition');
+    }, 10);
+  }
+
+  private forceReflow() {
+    this.elRef.nativeElement.offsetHeight;
+  }
+
+  selectCard(id: string) {
+    this.router.navigate(['game'], {queryParams: {gid: id}});
+  }
+
 }

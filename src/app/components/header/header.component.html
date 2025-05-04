@@ -19,9 +19,16 @@
 
     <div class="d-flex align-items-center">
       @if (isRegistered()) {
-        <button class="btn-color-personal" (click)="logOut()">
+        <div class="custom-dropdown" (click)="toggleDropdown()" [class.open]="dropdownOpen">
           <img src="/public/images/placeholder_profile.jpg" alt="User" class="auth-img" />
-        </button>
+
+          @if(dropdownOpen){
+          <ul class="dropdown-list" >
+            <li (click)="goToProfile()">Profile</li>
+            <li (click)="logOut()">Log out</li>
+          </ul>
+          }
+        </div>
       } @else {
         <button class="btn-color-personal" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <img src="/public/images/placeholder_profile.jpg" alt="User" class="auth-img" />

@@ -3,14 +3,13 @@
 <h1>NEWS</h1>
 <div>
   <app-carousel
-    [items]="gamesList">
+    [games]="gamesList">
   </app-carousel>
 </div>
 
 @if(isRegistered())
   {
     <h1>COMMUNITY</h1>
-    <app-carousel
-      [items]="gamesList">
+    <app-carousel [games]="gamesList">
     </app-carousel>
   }
