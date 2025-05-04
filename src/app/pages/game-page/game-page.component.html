@@ -1,26 +1,37 @@
-@if (game){
-<main>
-    <article class="game-info-card">
-        <div class="game-content">
-            <div class="game-media">
-                @if (hasVideo()) {
-                    <iframe [src]="videoURL" allow="autoplay" frameborder="0" 
-                        allowfullscreen >
-                    </iframe>
-                } @else {
-                    <img id="game-placeholder" [src]="imgPath">
-                }
-            </div>
-            <section class="game-details col-md-6">
-                <h1 data-gid="title">{{ game.title }}</h1>
-                <div class="platform-info">
-                    <h3 data-gid="platform"></h3>
-                    <div class="platform-badge" data-gid="score">{{ game.score }}</div>
-                </div>
-                <p data-gid="description">{{ game.description }}</p>
-                <button class="add-game">Add to Library</button>
-            </section>
+@if (game) {
+    <main>
+        <div class="game-header-wrapper">
+            <h1>{{ game.title }}</h1>
+            <h2>{{ game.company }}</h2>
         </div>
-    </article>
-</main>
+        
+            <article class="game-info-card">  
+            <div class="game-content">
+              <div class="game-media">
+                @if (hasVideo()) {
+                  <iframe [src]="videoURL" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+                } @else {
+                  <img id="game-placeholder" [src]="imgPath" alt="game image">
+                }
+              </div>
+    
+              <section class="game-details col-md-6">
+                <div class="platform-badge">{{ game.score }}</div>
+                <h3>Platforms:</h3>
+                <p>{{ platforms() }}</p>                                
+                <button class="add-game">Add to Library</button>
+              </section>
+            </div>
+    
+            <div class="game-description">
+              <p [class.collapsed]="!isExpanded()" [class.expanded]="isExpanded()">
+                {{ game.description }}
+              </p>
+              <button class="toggle-description" (click)="toggleDescription()">
+                {{ isExpanded() ? 'See less' : 'See more' }}
+              </button>
+            </div>
+          </article>
+        
+    </main>
 }
