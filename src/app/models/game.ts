@@ -8,6 +8,5 @@ export interface Game {
   }
   company: string,
   description: string,
-  score: number,
-  isFavorite: boolean
+  score: number
 }

@@ -8,7 +8,7 @@ import { GamesService } from '../../services/games/games.service';
 @Component({
   selector: 'app-user-page',
   standalone: true,
-  imports: [SearchbarComponent, CoverCardComponent, AchievementCardComponent],
+  imports: [CoverCardComponent, AchievementCardComponent],
   templateUrl: './user-page.component.html',
   styleUrls: ['./user-page.component.css']
 })
