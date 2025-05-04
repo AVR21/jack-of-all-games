@@ -3,12 +3,12 @@
     <article class="game-info-card">
         <div class="game-content">
             <div class="game-media">
-                @if (hasVideo) {
-                    <iframe [src]="videoURL" width="560" height="315" frameborder="0" 
-                        allowfullscreen>
+                @if (hasVideo()) {
+                    <iframe [src]="videoURL" allow="autoplay" frameborder="0" 
+                        allowfullscreen >
                     </iframe>
                 } @else {
-                    <img id="game-placeholder" [src]="getImage()">
+                    <img id="game-placeholder" [src]="imgPath">
                 }
             </div>
             <section class="game-details col-md-6">

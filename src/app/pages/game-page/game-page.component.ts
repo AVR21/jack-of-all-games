@@ -14,7 +14,9 @@ export class GamePageComponent implements OnInit{
 
   isEnable = false;
   protected game!: Game;
+  protected imgPath = '';
   protected videoURL!: SafeResourceUrl;
+  protected hasVideo = signal(false);
 
   constructor(
     private route: ActivatedRoute,
@@ -31,8 +33,10 @@ export class GamePageComponent implements OnInit{
         this.gamesService.getGameById(gameId).subscribe(game => {
           this.game = game;
           if(this.game.media.video){
-            this.getVideo(this.game.media.video);
+            this.hasVideo.set(true);
+            this.getVideo();
           }
+          this.getImage();
         })
       } else {
         console.log('No se ha pasado un identificador de videojuego o el identificador pasado no es válido. gameID =',
@@ -42,19 +46,15 @@ export class GamePageComponent implements OnInit{
     });
   }
 
-  get hasVideo() {
-    console.log(this.game.media.video);
-    return this.game.media.video ? true : false;
-  }
-
   getImage() {
-    if(this.game.media.img)
-      return this.game.media.img[1];
-    else  return '/public/images/logo.png';
+    this.imgPath = this.game.media.img?. [1] ?? 'public/images/logo.png';
   }
 
-  getVideo(video: string) {
-    this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl(video);
+  getVideo() {    
+    if(this.game.media.video){
+    this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.game.media.video);
+    console.log(this.videoURL);
+    }
   }
 
 }
