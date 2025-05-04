@@ -43,7 +43,7 @@ export class UserPageComponent {
     private authService: AuthService,
     private gamesService: GamesService
   ) {
-    this.user.set(this.authService.user());
+    this.user = this.authService.user;
   }
 
   selectGame(gameId: number): void {
